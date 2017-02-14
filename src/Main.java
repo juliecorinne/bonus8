@@ -6,15 +6,31 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
+        String userInput;
 
         ArrayList<Movie> movieList = new ArrayList<>();
 
         listOfMovies(movieList);
 
+        System.out.println("Hello! Welcome to the movie database.");
+
+        do {
+
         welcomeMessage();
         String categoryPick = scan.nextLine();
+        System.out.println();
 
         ifElseForCategories(movieList, categoryPick);
+
+            System.out.println();
+
+            System.out.println("Would you like to view another category? y/n");
+            userInput = scan.nextLine();
+
+        } while (userInput.equalsIgnoreCase("y"));
+
+        System.out.println();
+        System.out.println("Thanks!");
 
     }
 
@@ -51,16 +67,19 @@ public class Main {
     }
 
     private static void welcomeMessage() {
-        System.out.println("Hello! Welcome to the movie database.");
+
         System.out.println("Which category would you like to view?");
+        System.out.println();
         System.out.println("Animated");
         System.out.println("Drama");
         System.out.println("Horror");
         System.out.println("SciFi");
         System.out.println();
+        System.out.println("Please specify below: ");
     }
 
     private static void listOfMovies(ArrayList<Movie> movieList) {
+
         movieList.add(new Movie("Cinderella", "Animated"));
         movieList.add(new Movie("Jaws", "Horror"));
         movieList.add(new Movie("The Departed", "Drama"));
