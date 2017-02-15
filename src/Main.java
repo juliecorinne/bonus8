@@ -16,11 +16,12 @@ public class Main {
 
         do {
 
-        welcomeMessage();
-        String categoryPick = scan.nextLine();
-        System.out.println();
+            welcomeMessage();
 
-        ifElseForCategories(movieList, categoryPick);
+            String categoryPick = scan.nextLine();
+            System.out.println();
+
+            ifElseForCategories(movieList, categoryPick);
 
             System.out.println();
 
@@ -35,6 +36,7 @@ public class Main {
     }
 
     private static void ifElseForCategories(ArrayList<Movie> movieList, String categoryPick) {
+
         if (categoryPick.equalsIgnoreCase("Animated")) {
 
             for (int i = 0; i < movieList.size(); i++) {
@@ -90,5 +92,26 @@ public class Main {
         movieList.add(new Movie("Captain America", "SciFi"));
         movieList.add(new Movie("Hercules", "Animated"));
         movieList.add(new Movie("Lilo and Stitch", "Animated"));
+        movieList.add(new Movie("The Sixth Sense", "Horror"));
+        movieList.add(new Movie("Green Mile", "Drama"));
+        movieList.add(new Movie("Tangled", "Animated"));
+        movieList.add(new Movie("The Little Mermaid", "Animated"));
+        movieList.add(new Movie("The God Father", "Drama"));
+
     }
+
+//    private static String validation(){
+//
+//        Scanner scan = new Scanner(System.in);
+//        String input = " ";
+//
+//        while (!input.equalsIgnoreCase("Animated") || !input.equalsIgnoreCase("Drama") || !input.equalsIgnoreCase("Horror") || !input.equalsIgnoreCase("SciFi")){
+//            System.out.println("Please enter one of the specified categories!");
+//            input = scan.nextLine();
+//        }
+//
+//        return input;
+//
+//    }
+
 }
